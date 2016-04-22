@@ -9,7 +9,7 @@ class KissmetricsServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../../config/config.php' => base_path('config/kissmetrics.php')
+            __DIR__ . '/../../config/kissmetrics.php' => base_path('config/kissmetrics.php')
         ]);
     }
     /**
