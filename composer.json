@@ -1,0 +1,23 @@
+{
+  "name": "tagvenue/laravel-kissmetrics",
+  "description": "Kissmetrics facade for Laravel 5",
+  "keywords": ["laravel", "laravel5", "kissmetrics", "analytics"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Adrian Cabala",
+      "email": "adrian.cabala@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "illuminate/support": "5.0.*",
+    "kissmetrics/kissmetrics-php": "^0.2.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "TagVenue\\LaravelKissmetrics": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
