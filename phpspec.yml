@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: TagVenue\Kissmetrics
+        psr4_prefix: TagVenue\Kissmetrics
