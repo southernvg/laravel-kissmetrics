@@ -17,7 +17,7 @@ Package is compatible with Laravel 5.0.*.
    ```json
     {
         "require": {
-            "hydreflab/laravel-mailer": "2.*"
+            "tagvenue/laravel-kissmetrics": "dev-master"
         },
        "repositories": [
              {
