@@ -53,7 +53,7 @@ class Kissmetrics extends Client {
      */
     protected function getCookie()
     {
-        return Cookie::get('km_ai');
+        return isset($_COOKIE['km_ai'])? $_COOKIE['km_ai'] : null;
     }
 
     protected function setApiKey($apiKey)
