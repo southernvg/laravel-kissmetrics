@@ -1,6 +1,7 @@
 <?php 
 namespace TagVenue\Kissmetrics;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Cookie;
 use KISSmetrics\Client;
 
 class Kissmetrics extends Client {
@@ -10,7 +11,7 @@ class Kissmetrics extends Client {
     public function __construct($apiKey)
     {
         $this->setApiKey($apiKey);
-        $transport = KISSmetrics\Transport\Sockets::initDefault();
+        $transport = \KISSmetrics\Transport\Sockets::initDefault();
         self::$_instance = parent::__construct($this->apiKey, $transport);
     }
 
@@ -27,6 +28,32 @@ class Kissmetrics extends Client {
         }
 
         return self::$_instance;
+    }
+
+    /**
+     * Identify user with provided ID and match it with existing cookie.
+     *
+     * @param string $id
+     * @return $this
+     */
+    public function identify($id)
+    {
+        parent::identify($id);
+        if ($cookie = $this->getCookie()) {
+            $this->alias($cookie);
+        }
+        
+        return $this;
+    }
+
+    /**
+     * Get current Kissmetrics user cookie
+     *
+     * @return string|null
+     */
+    protected function getCookie()
+    {
+        return Cookie::get('km_ai');
     }
 
     protected function setApiKey($apiKey)
