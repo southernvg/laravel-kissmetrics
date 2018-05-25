@@ -1,5 +1,5 @@
 {
-  "name": "tagvenue/laravel-kissmetrics",
+  "name": "southernvg/laravel-kissmetrics",
   "description": "Kissmetrics facade for Laravel 5",
   "keywords": ["laravel", "laravel5", "kissmetrics", "analytics"],
   "license": "MIT",
